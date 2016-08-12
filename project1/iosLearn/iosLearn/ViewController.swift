@@ -24,5 +24,8 @@ class ViewController: UIViewController {
     
     // Task 3
     
+    // Henry's code
+    let henry = "cool"
+    
 }
 
