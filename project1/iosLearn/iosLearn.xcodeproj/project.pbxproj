@@ -14,6 +14,7 @@
 		F51B9F771D5DE67500E0CEFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51B9F751D5DE67500E0CEFF /* Main.storyboard */; };
 		F51B9F791D5DE67500E0CEFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51B9F781D5DE67500E0CEFF /* Assets.xcassets */; };
 		F51B9F7C1D5DE67500E0CEFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51B9F7A1D5DE67500E0CEFF /* LaunchScreen.storyboard */; };
+		F5364A221D634772004D3946 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5364A211D634772004D3946 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F51B9F781D5DE67500E0CEFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F51B9F7B1D5DE67500E0CEFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F51B9F7D1D5DE67500E0CEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5364A211D634772004D3946 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				AAFB94E81D6196BA00838891 /* Controller */,
 				F51B9F711D5DE67500E0CEFF /* AppDelegate.swift */,
 				F51B9F731D5DE67500E0CEFF /* ViewController.swift */,
+				F5364A211D634772004D3946 /* GoogleService-Info.plist */,
 				F51B9F751D5DE67500E0CEFF /* Main.storyboard */,
 				F51B9F781D5DE67500E0CEFF /* Assets.xcassets */,
 				F51B9F7A1D5DE67500E0CEFF /* LaunchScreen.storyboard */,
@@ -162,6 +165,7 @@
 			files = (
 				F51B9F7C1D5DE67500E0CEFF /* LaunchScreen.storyboard in Resources */,
 				F51B9F791D5DE67500E0CEFF /* Assets.xcassets in Resources */,
+				F5364A221D634772004D3946 /* GoogleService-Info.plist in Resources */,
 				F51B9F771D5DE67500E0CEFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

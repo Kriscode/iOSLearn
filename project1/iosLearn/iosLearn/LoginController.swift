@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginController: UIViewController {
     
@@ -123,7 +124,29 @@ class LoginController: UIViewController {
         loginRegisterButton.topAnchor.constraintEqualToAnchor(inputsContainerView.bottomAnchor, constant: 12).active = true
         loginRegisterButton.widthAnchor.constraintEqualToAnchor(inputsContainerView.widthAnchor).active = true
         loginRegisterButton.heightAnchor.constraintEqualToConstant(50).active = true
+        loginRegisterButton.addTarget(self, action: #selector(handleRegister), forControlEvents: .TouchUpInside)
 
+    }
+    
+    func handleRegister() {
+        guard let email = emailTextField.text, password = passwordTextField.text else {
+            
+            return
+        }
+        
+        FIRAuth.auth()?.createUserWithEmail(email, password: password, completion:
+            {(user, error) in
+            
+            if error != nil {
+                
+                //TODO: error should be displayed in popup
+                print("===============================")
+                print(error)
+                return
+            }
+            //success 
+            print("logged in")
+        })
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

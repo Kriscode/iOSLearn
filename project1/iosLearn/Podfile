@@ -8,5 +8,6 @@ target 'iosLearn' do
   # Pods for iosLearn
 
 pod 'Firebase'
+pod 'Firebase/Auth'
 
 end
