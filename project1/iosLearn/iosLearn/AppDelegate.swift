@@ -13,12 +13,12 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var dbModel: DatabaseModel?
-
+    //var dbModel: DatabaseModel?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-       FIRApp.configure()
-        dbModel = DatabaseModel()
+        FIRApp.configure()
+        //dbModel = DatabaseModel()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.makeKeyAndVisible()
