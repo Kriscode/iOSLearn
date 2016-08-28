@@ -67,18 +67,35 @@ class LoginController: UIViewController {
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
-
+    
+    let loginRegisterSegmentedControl: UISegmentedControl = {
+        let sc = UISegmentedControl(items: ["Login", "Register"])
+        sc.translatesAutoresizingMaskIntoConstraints = false
+        sc.tintColor = UIColor.whiteColor()
+        sc.selectedSegmentIndex = 1
+        return sc
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = UIColor(r: 52, g: 73, b: 94)
         
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
+        view.addSubview(loginRegisterSegmentedControl)
         
         setupInputsContainerView()
         setupLoginRegisterButton()
+        setupLogRegSegmentControl()
         
+    }
+    
+    func setupLogRegSegmentControl() {
+        loginRegisterSegmentedControl.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+        loginRegisterSegmentedControl.bottomAnchor.constraintEqualToAnchor(inputsContainerView.topAnchor, constant: -12).active = true
+        loginRegisterSegmentedControl.widthAnchor.constraintEqualToAnchor(inputsContainerView.widthAnchor).active = true
+        loginRegisterSegmentedControl.heightAnchor.constraintEqualToConstant(36).active = true
     }
     
     func setupInputsContainerView() {
@@ -125,7 +142,7 @@ class LoginController: UIViewController {
         loginRegisterButton.widthAnchor.constraintEqualToAnchor(inputsContainerView.widthAnchor).active = true
         loginRegisterButton.heightAnchor.constraintEqualToConstant(50).active = true
         loginRegisterButton.addTarget(self, action: #selector(handleRegister), forControlEvents: .TouchUpInside)
-
+        
     }
     
     func handleRegister() {
@@ -136,23 +153,36 @@ class LoginController: UIViewController {
         
         FIRAuth.auth()?.createUserWithEmail(email, password: password, completion:
             {(user, error) in
-            
-            if error != nil {
                 
-                //TODO: error should be displayed in popup
-                print("===============================")
-                print(error)
-                return
-            }
-            //success 
-            print("logged in")
+                if error != nil {
+                    
+                    print(error)
+                    
+                    let alertController = UIAlertController(title: "Erroe", message: error.debugDescription, preferredStyle: .Alert)
+                    //We add buttons to the alert controller by creating UIAlertActions:
+                    let actionOk = UIAlertAction(title: "OK",
+                        style: .Default,
+                        handler: nil) //You can use a block here to handle a press on this button
+                    
+                    alertController.addAction(actionOk)
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
+                    return
+                }
+                //success 
+                print("logged in")
+                
+                let viewController = ViewController()
+                self.presentViewController(viewController, animated: true, completion: nil)
+                
         })
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
-
+    
 }
 
 extension UIColor {
