@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		AAFB94EC1D61971800838891 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB94EB1D61971800838891 /* LoginController.swift */; };
 		C2E4D2B1BCC27A24E0C8E702 /* Pods_iosLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A436CD8731ED5259007A348E /* Pods_iosLearn.framework */; };
+		DD15F47B1D73A0C00051226D /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15F47A1D73A0C00051226D /* DatabaseModel.swift */; };
+		DD15F47D1D73A0D90051226D /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD15F47C1D73A0D90051226D /* Friend.swift */; };
+		DDAF2B781D726C1F000691B7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF2B771D726C1F000691B7 /* MapViewController.swift */; };
+		DDAF2B7A1D726CAE000691B7 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF2B791D726CAE000691B7 /* FriendsListViewController.swift */; };
+		DDAF2B7C1D726D33000691B7 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF2B7B1D726D33000691B7 /* NotificationsViewController.swift */; };
+		DDC33B281D73939D00CE55D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC33B271D73939D00CE55D1 /* MainViewController.swift */; };
 		F51B9F721D5DE67500E0CEFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51B9F711D5DE67500E0CEFF /* AppDelegate.swift */; };
 		F51B9F741D5DE67500E0CEFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51B9F731D5DE67500E0CEFF /* ViewController.swift */; };
 		F51B9F771D5DE67500E0CEFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F51B9F751D5DE67500E0CEFF /* Main.storyboard */; };
@@ -22,6 +28,12 @@
 		AAFB94EB1D61971800838891 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B18ED587D4EA5F51CD0B1E74 /* Pods-iosLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosLearn/Pods-iosLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		C6DC1F73DDE8D4E2253E68E4 /* Pods-iosLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosLearn/Pods-iosLearn.release.xcconfig"; sourceTree = "<group>"; };
+		DD15F47A1D73A0C00051226D /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
+		DD15F47C1D73A0D90051226D /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		DDAF2B771D726C1F000691B7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DDAF2B791D726CAE000691B7 /* FriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		DDAF2B7B1D726D33000691B7 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		DDC33B271D73939D00CE55D1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F51B9F6E1D5DE67500E0CEFF /* iosLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51B9F711D5DE67500E0CEFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F51B9F731D5DE67500E0CEFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				AAFB94EB1D61971800838891 /* LoginController.swift */,
+				DDAF2B771D726C1F000691B7 /* MapViewController.swift */,
+				DDAF2B791D726CAE000691B7 /* FriendsListViewController.swift */,
+				DDAF2B7B1D726D33000691B7 /* NotificationsViewController.swift */,
+				F51B9F731D5DE67500E0CEFF /* ViewController.swift */,
+				DDC33B271D73939D00CE55D1 /* MainViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -92,9 +109,10 @@
 			children = (
 				AAFB94E81D6196BA00838891 /* Controller */,
 				F51B9F711D5DE67500E0CEFF /* AppDelegate.swift */,
-				F51B9F731D5DE67500E0CEFF /* ViewController.swift */,
 				F5364A211D634772004D3946 /* GoogleService-Info.plist */,
 				F51B9F751D5DE67500E0CEFF /* Main.storyboard */,
+				DD15F47C1D73A0D90051226D /* Friend.swift */,
+				DD15F47A1D73A0C00051226D /* DatabaseModel.swift */,
 				F51B9F781D5DE67500E0CEFF /* Assets.xcassets */,
 				F51B9F7A1D5DE67500E0CEFF /* LaunchScreen.storyboard */,
 				F51B9F7D1D5DE67500E0CEFF /* Info.plist */,
@@ -225,8 +243,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD15F47D1D73A0D90051226D /* Friend.swift in Sources */,
+				DD15F47B1D73A0C00051226D /* DatabaseModel.swift in Sources */,
+				DDC33B281D73939D00CE55D1 /* MainViewController.swift in Sources */,
 				F51B9F741D5DE67500E0CEFF /* ViewController.swift in Sources */,
 				AAFB94EC1D61971800838891 /* LoginController.swift in Sources */,
+				DDAF2B781D726C1F000691B7 /* MapViewController.swift in Sources */,
+				DDAF2B7C1D726D33000691B7 /* NotificationsViewController.swift in Sources */,
+				DDAF2B7A1D726CAE000691B7 /* FriendsListViewController.swift in Sources */,
 				F51B9F721D5DE67500E0CEFF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

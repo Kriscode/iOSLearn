@@ -7,15 +7,37 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginController = LoginController()
-        presentViewController(loginController, animated: true, completion: nil)
+        
+        
+        if FIRAuth.auth()?.currentUser?.uid == nil {
+            let loginController = LoginController()
+            self.presentViewController(loginController, animated: true, completion: nil)
+            
+        } else {
+            let viewController = ViewController()
+            self.presentViewController(viewController, animated: true, completion: nil)
+            
+        }
+        
+        
         
     }
+    
+    func handleLogout() {
+        do {
+            try FIRAuth.auth()?.signOut()
+            
+        } catch let logoutError {
+            print(logoutError)
+        }
+    }
+    
     
 }
