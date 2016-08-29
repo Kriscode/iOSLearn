@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class ViewController: UITabBarController, UITabBarControllerDelegate {
+class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,13 +17,17 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
         
         
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        initializeTabBarItems()
+        if FIRAuth.auth()?.currentUser?.uid == nil {
+            let loginController = LoginController()
+            self.presentViewController(loginController, animated: true, completion: nil)
+        }else {
+            initializeTabBarItems()
+        }
     }
     
     func initializeTabBarItems() {
@@ -39,7 +44,7 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
         let icon3 = UITabBarItem(title: "Map", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
         map.tabBarItem = icon3
         
-        let mainController = MainViewController()
+        let mainController = LogoutViewController()
         let icon4 = UITabBarItem(title: "Logout", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
         mainController.tabBarItem = icon4
         
@@ -51,6 +56,10 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
     
     //Delegate methods
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        if(viewController is LogoutViewController){
+            print("shit")
+        }
+        
         return true;
     }
     

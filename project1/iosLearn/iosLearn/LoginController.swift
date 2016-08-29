@@ -176,6 +176,29 @@ class LoginController: UIViewController {
         
     }
     
+    func handleLoginRegister(){
+        if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
+            handleLogin()
+        } else {
+            handleRegister()
+        }
+    }
+    
+    func handleLogin(){
+        guard let email = emailTextField.text, password = passwordTextField.text else {
+            return
+        }
+        
+        FIRAuth.auth()?.signInWithEmail(email, password: password, completion: {
+            (user, error) in
+            if error != nil {
+                self.showAlert(error.debugDescription)
+                return
+            }
+        })
+        
+    }
+    
     func handleRegister() {
         guard let email = emailTextField.text, password = passwordTextField.text else {
             
@@ -189,15 +212,7 @@ class LoginController: UIViewController {
                     
                     print(error)
                     
-                    let alertController = UIAlertController(title: "Erroe", message: error.debugDescription, preferredStyle: .Alert)
-                    //We add buttons to the alert controller by creating UIAlertActions:
-                    let actionOk = UIAlertAction(title: "OK",
-                        style: .Default,
-                        handler: nil) //You can use a block here to handle a press on this button
-                    
-                    alertController.addAction(actionOk)
-                    
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    self.showAlert(error.debugDescription)
                     
                     return
                 }
@@ -206,10 +221,20 @@ class LoginController: UIViewController {
                 
                 //self.dismissViewControllerAnimated(true, completion: nil)
                 
-                let viewController = ViewController()
+                let viewController = TabBarViewController()
                 self.presentViewController(viewController, animated: true, completion: nil)
                 
         })
+    }
+    
+    func showAlert(message:String){
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+        let actionOk = UIAlertAction(title: "OK",
+                                     style: .Default,
+                                     handler: nil) //You can use a block here to handle a press on this button
+        
+        alertController.addAction(actionOk)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

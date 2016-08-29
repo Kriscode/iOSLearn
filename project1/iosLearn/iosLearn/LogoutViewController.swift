@@ -9,30 +9,20 @@
 import UIKit
 import Firebase
 
-class MainViewController:UIViewController {
+class LogoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        if FIRAuth.auth()?.currentUser?.uid == nil {
-            let loginController = LoginController()
-            self.presentViewController(loginController, animated: true, completion: nil)
-            
-        } else {
-            let viewController = ViewController()
-            self.presentViewController(viewController, animated: true, completion: nil)
-            
-        }
-        
-        
+        handleLogout();
         
     }
     
     func handleLogout() {
         do {
             try FIRAuth.auth()?.signOut()
+            let viewController = TabBarViewController()
+            self.presentViewController(viewController, animated: true, completion: nil)
             
         } catch let logoutError {
             print(logoutError)
