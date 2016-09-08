@@ -22,7 +22,7 @@ class LogoutViewController: UIViewController {
         do {
             try FIRAuth.auth()?.signOut()
             let viewController = TabBarViewController()
-            self.presentViewController(viewController, animated: true, completion: nil)
+            self.present(viewController, animated: true, completion: nil)
             
         } catch let logoutError {
             print(logoutError)

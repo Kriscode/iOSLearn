@@ -19,12 +19,12 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if FIRAuth.auth()?.currentUser?.uid == nil {
             let loginController = LoginController()
-            self.presentViewController(loginController, animated: true, completion: nil)
+            self.present(loginController, animated: true, completion: nil)
         }else {
             initializeTabBarItems()
         }
@@ -59,7 +59,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     //Delegate methods
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if(viewController is LogoutViewController){
             print("shit")
         }
