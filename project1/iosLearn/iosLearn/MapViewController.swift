@@ -12,7 +12,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.redColor()
+        view.backgroundColor = UIColor.red
         self.title = "Map"
         print("Map loaded")
         
