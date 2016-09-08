@@ -32,6 +32,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     func initializeTabBarItems() {
         
+        let main = MainViewController()
+        let icon0 = UITabBarItem(title: "Main", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
+        main.tabBarItem = icon0
+        
         let friends = FriendListViewController()
         let icon1 = UITabBarItem(title: "Friends", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
         friends.tabBarItem = icon1
@@ -49,7 +53,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         mainController.tabBarItem = icon4
         
         
-        let controllers = [friends, notifications, map, mainController]  //array of the root view controllers displayed by the tab bar interface
+        let controllers = [main, friends, notifications, map, mainController]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
         
     }
