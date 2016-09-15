@@ -174,7 +174,7 @@ class LoginController: UIViewController {
         loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        loginRegisterButton.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        loginRegisterButton.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         
     }
     
@@ -197,6 +197,9 @@ class LoginController: UIViewController {
                 self.showAlert(error.debugDescription)
                 return
             }
+            let viewController = TabBarViewController()
+            self.present(viewController, animated: true, completion: nil)
+
         })
         
     }

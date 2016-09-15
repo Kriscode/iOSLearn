@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.blueColor()
+        view.backgroundColor = UIColor.blue
         self.title = "Main"
         print("Main loaded")
         
